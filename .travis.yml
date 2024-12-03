@@ -1,0 +1,8 @@
+language: node_js
+node_js:
+  - "18"
+services:
+  - docker
+script:
+  - docker-compose up -d           # Levanta los contenedores con Docker Compose
+  - docker exec docker1 ping -c 4 docker2  # Realiza el ping entre los contenedores
