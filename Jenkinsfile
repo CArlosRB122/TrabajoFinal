@@ -3,12 +3,13 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'docker-compose up -d'
+                bat 'my-windows-command'  // Ejecutar tu comando en Windows
             }
         }
         stage('Test') {
             steps {
-                sh 'docker exec docker1 ping -c 4 docker2'
+                // Reemplazamos 'sh' por 'bat' y ajustamos el comando ping para Windows
+                bat 'docker exec docker1 ping -n 4 docker2'
             }
         }
     }
