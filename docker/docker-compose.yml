@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  docker1:
+    image: alpine:latest
+    container_name: docker1
+    command: tail -f /dev/null
+    networks:
+      - app-network
+
+  docker2:
+    image: alpine:latest
+    container_name: docker2
+    command: tail -f /dev/null
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
